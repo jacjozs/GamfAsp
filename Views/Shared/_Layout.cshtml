@@ -1,0 +1,33 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="~/css/site.css" />
+    <title>@ViewBag.Title</title>
+</head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <ul class="nav navbar-nav">
+                <li><a asp-area="" asp-controller="Home" asp-action="Index">Főoldal</a></li>
+                <li><a asp-area="" asp-controller="Students" asp-action="Index">Hallgatók</a></li>
+                <li><a asp-area="" asp-controller="Home" asp-action="Index">Tantárgyak</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container body-content" >
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; 2020-GAMF</p>
+        </footer>
+    </div>
+
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
