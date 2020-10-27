@@ -1,0 +1,41 @@
+﻿@model IEnumerable<StudentCreditsVM>
+
+@{
+    ViewData["Title"] = "Hallgató teljesített kreditjei";
+}
+
+    <h2>Hallgató teljesített kreditjei</h2>
+
+<div>
+    <hr />
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.StudentName)
+            </th>
+            <th class="text-center">
+                @Html.DisplayNameFor(model => model.Credits)
+            </th>
+            <th class="text-center">
+                @Html.DisplayNameFor(model => model.FullCredits)
+            </th>
+        </tr>
+        @foreach (var student in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => student.StudentName)
+                </td>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => student.Credits)
+                </td>
+                <td class="text-center">
+                    @Html.DisplayFor(modelItem => student.FullCredits)
+                </td>
+            </tr>
+        }
+    </table>
+</div>
+<div>
+    <a asp-controller="Home" asp-action="Index">Vissza</a>
+</div>
